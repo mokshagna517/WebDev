@@ -3,28 +3,41 @@
     <head>
     <meta charset="utf-8">
         <title>Form</title>
+        <script>
+        function validate(){
+            //alert("Hello you fired me")
+            if(document.f1.firstname.value==""){
+                alert("Please Enter your name");
+                document.f1.firstname.focus();
+                return false;
+            }
+        }
+        
+        </script>
     </head>
     <body>
-        <h2>HTML 4 and HTML 5 form</h2>
-        <form name="f1" method="post">
+        <h2>Javascript Validation</h2>
         <pre>
-        Name: <input type="text" name="FirstName" placeholder="Enter your name" required>
-        Email: <input type="email" name="email" placeholder="Enter your email" required>
-        Mobile: <input type="tel" name="moble" required>
-        Course: <select name="course">
+        <form name="f1" method="post" onSubmit="return validate();">
+        
+         Name: <input type="text" name="FirstName" >
+        Email: <input type="email" name="email" >
+       Mobile: <input type="date" name="moble">
+       Course: <select name="course">
                <option value="">Select Course</option>
                <option value="HTML Training">HTML training</option>
             <option value="Digital Training">digital training</option>
             <option value="Java Training">java training</option>
         </select>
-        Mode: <input type="radio" name="mode" value="Class Room training">class room training!<input type="radio" name="mode" value="Online Training">Online training
+         Mode: <input type="radio" name="mode" value="Class Room training">class room training!<input type="radio" name="mode" value="Online Training">Online training
         Track: <input type="checkbox" name="track" value="Class Room training">Class room training!<input type="checkbox" name="track" value="online training">online training 
         
         Query: <textarea name="query" cols="35" rows="5"></textarea>
-        <input type= "submit" value="Submit">
-        <input type= "button" value="Cancel">
-        </pre>
+        <input type= "submit" value="Submit">     <input type= "button" value="Cancel">
+        
         </form>
+        </pre>
+        
         
     </body>
 </html>
