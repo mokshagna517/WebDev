@@ -3,14 +3,46 @@
     <head>
     <meta charset="utf-8">
         <title>Form</title>
-        <script>
+        <script type="text/javascript">
         function validate(){
             //alert("Hello you fired me")
-            if(document.f1.firstname.value==""){
+            if(document.f1.Firstname.value==""){
                 alert("Please Enter your name");
-                document.f1.firstname.focus();
+                document.f1.Firstname.focus();
                 return false;
             }
+            if(echeck(document.f1.email.value)==false){
+                alert("please enter a valid email");
+                document.f1.email.focus();
+                return false;
+            }
+            if(document.f1.mobile.value==""){
+                alert("Please Enter your mobile no");
+                document.f1.mobile.focus();
+                return false;
+            }
+            if(!isNaN(document.f1.mobile.value)==true){
+                alert("Please Enter nos only");
+                document.f1.mobile.focus();
+                return false;
+            }
+            if(document.f1.course.value==""){
+                alert("Please select atleast one course");
+                document.f1.course.focus();
+                return false;
+            }
+            if(document.f1.mode[0].checked==false && document.f1.mode[1].checked==false){
+                alert("Please choose mode");
+                document.f1.mode[0].focus();
+                return false;
+            }
+             if(document.f1.track[0].checked==false && document.f1.track[1].checked==false){
+                alert("Please choose mode");
+                document.f1.mode[0].focus();
+                return false;
+            }
+            
+            return true;
         }
         
         </script>
@@ -18,11 +50,11 @@
     <body>
         <h2>Javascript Validation</h2>
         <pre>
-        <form name="f1" method="post" onSubmit="return validate();">
+        <form name="f1" method="post" onSubmit="validate();">
         
-         Name: <input type="text" name="FirstName" >
+         Name: <input type="text" name="Firstname" >
         Email: <input type="email" name="email" >
-       Mobile: <input type="date" name="moble">
+       Mobile: <input type="date" name="mobile">
        Course: <select name="course">
                <option value="">Select Course</option>
                <option value="HTML Training">HTML training</option>
